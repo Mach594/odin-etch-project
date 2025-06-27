@@ -1,15 +1,22 @@
 const body = document.querySelector("body");
+body.setAttribute("style", "display: flex; justify-content: center; align-items: center; height: 100vh;");
 const container = document.querySelector(".container");
-container.setAttribute("style", "display: flex; justify-content: center; align-content: center;")
+
+container.setAttribute("style", 
+    "display: flex; justify-content: center; align-content: center;\
+    flex-wrap: wrap; width: 450px;")
 
 function createDiv() {
     const div = document.createElement("div");
+    div.setAttribute("style", 
+        "height: 25px; width: 25px; border: solid; border-color: black;\
+        border-width: 1px;")
     container.appendChild(div);
 };
 
-for (var i=0; i < 16; i++){
+// Create a 16x16 div grid
+for (var i=0; i < (16*16); i++){
     createDiv();
 };
 
 const divSelect = document.querySelector("div div");
-divSelect.setAttribute("style", "flex-direction: row; border: solid; background-color: black; height: 200px; width: 200px;")
