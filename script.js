@@ -10,7 +10,8 @@ function createDiv() {
     const div = document.createElement("div");
     div.setAttribute("style", 
         "height: 25px; width: 25px; border: solid; border-color: black;\
-        border-width: 1px;")
+        border-width: 1px;");
+    div.setAttribute("class", "child")
     container.appendChild(div);
 };
 
@@ -19,4 +20,9 @@ for (var i=0; i < (16*16); i++){
     createDiv();
 };
 
-const divSelect = document.querySelector("div div");
+// Changes class to active on mouseover
+childDivs = document.querySelectorAll(".child")
+
+childDivs.forEach(element => {
+    element.addEventListener("mouseover", () => {element.setAttribute("class", "active")})
+}); 
